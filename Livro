@@ -1,0 +1,18 @@
+class Livro:
+    def __init__(self, titulo, autor, numero_paginas):
+        self.titulo = titulo
+        self.autor = autor
+        self.numero_paginas = numero_paginas
+        self.pagina_atual = 0  # começa fechado
+
+    def abrir_livro(self):
+        self.pagina_atual = 1
+
+    def ler_paginas(self, quantidade):
+        self.pagina_atual += quantidade
+        if self.pagina_atual > self.numero_paginas:
+            self.pagina_atual = self.numero_paginas
+
+    def exibir_progresso(self):
+        faltam = self.numero_paginas - self.pagina_atual
+        print(f"Lidas: {self.pagina_atual} | Faltam: {faltam}")
